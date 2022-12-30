@@ -17,7 +17,7 @@ func Execute() int {
 		return 1
 	}
 
-	if ok, err := client.CheckServerConnection(); !ok {
+	if ok, err := client.Ping(); !ok {
 		_, _ = fmt.Fprintf(os.Stderr, "cannot connect to k8s server: %v\n", err)
 		return 1
 	}

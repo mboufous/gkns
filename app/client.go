@@ -31,8 +31,8 @@ func NewClient(config *Config) (*ClientProvider, error) {
 	}, nil
 }
 
-// CheckServerConnection checks connection to k8s server
-func (c *ClientProvider) CheckServerConnection() (bool, error) {
+// Ping checks connection to k8s server
+func (c *ClientProvider) Ping() (bool, error) {
 	if c.kubeClient == nil {
 		return false, fmt.Errorf("client is not initiliazed")
 	}
